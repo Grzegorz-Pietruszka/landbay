@@ -1,0 +1,107 @@
+<div class="d-flex flex-row">
+  <button class="btn col-6 top-buttons active-button">Account Details</button>
+  <button class="btn col-6 top-buttons" disabled>Personal Details</button>
+</div>
+<form
+  class="container-fluid px-0"
+  [formGroup]="registerForm"
+  (ngSubmit)="onSubmit()"
+>
+  <div class="register-area d-flex flex-column px-1 py-1 px-lg-5 py-lg-5">
+    <div class="form-wrapper form-group d-flex flex-row">
+      <img
+        src="
+         ../../assets/images/mail_icon.svg"
+        alt=""
+      />
+      <div class="mail-label d-flex flex-column">
+        <label for="email">
+          Email:
+          <input
+            type="email"
+            id="email"
+            placeholder="example@myemail.com"
+            formControlName="email"
+          />
+        </label>
+        <label for="confirm-email">
+          Confirm email:
+          <input
+            type="email"
+            id="confirm-email"
+            placeholder="example@myemail.com"
+            formControlName="confirmEmail"
+          />
+        </label>
+      </div>
+    </div>
+    <div *ngIf="submitted && f.email.errors" class="alert alert-danger">
+      <div *ngIf="f.email.errors.email">Valid email is required</div>
+      <div *ngIf="f.email.errors.isNotAllowed">
+        This email is not allowed
+      </div>
+      <div *ngIf="f.email.errors.required">Email is required</div>
+    </div>
+    <div *ngIf="submitted && f.confirmEmail.errors" class="alert alert-danger">
+      <div *ngIf="f.confirmEmail.errors.notMatch">Emails don't match</div>
+      <div *ngIf="f.confirmEmail.errors.required">Email is required</div>
+    </div>
+    <div class="form-wrapper form-group d-flex flex-row">
+      <img src="../../assets/images/padlock_icon.svg" alt="" />
+      <label for="password">
+        Password:
+        <input
+          type="password"
+          id="password"
+          placeholder="........."
+          formControlName="password"
+        />
+      </label>
+    </div>
+    <div *ngIf="submitted && f.password.errors" class="alert alert-danger">
+      <div *ngIf="f.password.errors.pattern">Wrong password</div>
+      <div *ngIf="f.password.errors.required">Password is required</div>
+    </div>
+    <div class="form-wrapper form-group d-flex flex-row">
+      <img src="../../assets/images/pin_icon.svg" alt="" />
+      <label for="pin" class="d-flex flex-row" id="pin-label">
+        Pin:
+        <div class="inputpin-wrapper" id="pin">
+          <input type="password" placeholder="*" class="pin" />
+          <input type="password" placeholder="*" class="pin" />
+          <input type="password" placeholder="*" class="pin" />
+          <input type="password" placeholder="*" class="pin" />
+          <input type="password" placeholder="*" class="pin" />
+        </div>
+      </label>
+    </div>
+
+    <div *ngIf="submitted && f.checkbox.errors" class="alert alert-danger">
+      <div *ngIf="f.checkbox.errors.required">
+        You must read and accept Terms&Conditions
+      </div>
+    </div>
+    <div class="form-wrapper form-group row checkbox">
+      <label for="offers1" class="col-2 col-md-1">
+        <input type="checkbox" id="offers1" />
+      </label>
+      <span class="col-10 col-md-11">
+        I am happy to receive news and spacial offers from Landbay from time to
+        time.
+      </span>
+    </div>
+    <div class="form-wrapper form-group row checkbox">
+      <label for="offers2" class="col-2 col-md-1">
+        <input type="checkbox" id="offers2" formControlName="checkbox" />
+      </label>
+      <span class="col-10 col-md-11">
+        Before you can proceed you must read and accept our Terms & Conditions
+        and confirm that you understand that this is an investment account and
+        not a savings account. Your capital is at risk.
+      </span>
+    </div>
+    <div class="submit-btn mx-auto">
+      <button type="submit" class="btn btn-danger">Continue</button>
+    </div>
+  </div>
+</form>

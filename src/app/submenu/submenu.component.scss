@@ -1,0 +1,15 @@
+.submenu-wrapper {
+  ul {
+    padding: 0;
+    font-size: 0.8rem;
+
+    li {
+      list-style: none;
+
+      a {
+        color: black;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
