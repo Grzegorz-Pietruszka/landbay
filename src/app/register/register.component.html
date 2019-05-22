@@ -3,7 +3,7 @@
     <button class="btn col-6 top-buttons" disabled>Personal Details</button>
 </div>
 <form class="container-fluid px-0" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div class="register-area d-flex flex-column px-1 py-1 px-lg-5 py-lg-5">
+    <div class="register-area d-flex flex-column px-3 py-4 px-lg-5 py-lg-5">
         <div *ngIf="submitted">
             <div *ngIf="registerForm.valid" class="alert alert-success">You have successfully registered</div>
         </div>
@@ -94,8 +94,9 @@
                 <input type="checkbox" id="offers2" formControlName="checkbox" />
             </label>
             <span class="col-10 col-md-11">
-                Before you can proceed you must read and accept our Terms & Conditions and confirm that you understand
-                that this is an investment account and not a savings account. Your capital is at risk.
+                Before you can proceed you must read and accept our
+                <a href="https://landbay.co.uk/terms-and-conditions">Terms & Conditions</a> and confirm that you
+                understand that this is an investment account and not a savings account. Your capital is at risk.
             </span>
         </div>
         <div *ngIf="submitted">

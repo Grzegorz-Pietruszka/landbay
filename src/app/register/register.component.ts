@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
             },
         );
     }
+    //get value of a field
     get f() {
         return this.registerForm.controls;
     }
