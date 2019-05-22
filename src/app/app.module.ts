@@ -10,19 +10,21 @@ import { RegisterComponent } from './register/register.component';
 import { MenuComponent } from './menu/menu.component';
 import { SubmenuComponent } from './submenu/submenu.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ErrorMsgComponent } from './error-msg/error-msg.component';
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    LoginAreaComponent,
-    AboutComponent,
-    AboutCardComponent,
-    RegisterComponent,
-    MenuComponent,
-    SubmenuComponent
-  ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        NavbarComponent,
+        LoginAreaComponent,
+        AboutComponent,
+        AboutCardComponent,
+        RegisterComponent,
+        MenuComponent,
+        SubmenuComponent,
+        ErrorMsgComponent,
+    ],
+    imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
 export class AppModule {}

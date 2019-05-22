@@ -1,23 +1,31 @@
-<div class="container">
-  <div class="row px-2 px-lg-4 title-area">
-    <h1>
-      Thousands of investors are earning great returns from their investments
-    </h1>
-  </div>
-  <div class="row pt-4 pt-lg-5">
-    <about-card [title]="'Invest in prime UK buy-to-let'"
-                [imgIcon]="'house.png'"
-                class="col-xs-12 col-md-6"></about-card>
-    <about-card [title]="'Access money early with our Tracker product'"
-                [imgIcon]="'access_money.png'"
-                class="col-xs-12 col-md-6 mb-lg-3"></about-card>
-  </div>
-  <div class="row">
-    <about-card [title]="'Earn interest monthly'"
-                [imgIcon]="'access_money.png'"
-                class="col-xs-12 col-md-6"></about-card>
-    <about-card [title]="'Inflation busting returns'"
-                [imgIcon]="'house.png'"
-                class="col-xs-12 col-md-6"></about-card>
-  </div>
+<div class="container mb-5 pr-5">
+    <div class="row px-2 px-lg-4 title-area">
+        <h1>
+            Thousands of investors are earning great returns from their investments
+        </h1>
+    </div>
+    <div class="row pt-4 pt-lg-5">
+        <about-card
+            [title]="'Invest in prime UK buy-to-let'"
+            [imgIcon]="'house.png'"
+            class="col-xs-12 col-md-6 mt-3 border-right border-primary border-bottom border-primary"
+        ></about-card>
+        <about-card
+            [title]="'Access money early with our Tracker product'"
+            [imgIcon]="'access_money.png'"
+            class="col-xs-12 col-md-6 mt-3 border-bottom border-primary"
+        ></about-card>
+    </div>
+    <div class="row cards2">
+        <about-card
+            [title]="'Earn interest monthly'"
+            [imgIcon]="'access_money.png'"
+            class="col-xs-12 col-md-6 mt-3 mt-3 border-right border-primary"
+        ></about-card>
+        <about-card
+            [title]="'Inflation busting returns'"
+            [imgIcon]="'house.png'"
+            class="col-xs-12 col-md-6 mt-3"
+        ></about-card>
+    </div>
 </div>

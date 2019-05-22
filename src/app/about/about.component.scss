@@ -1,6 +1,27 @@
 h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: justify;
-  text-align-last: justify;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+@media only screen and (max-width: 768px) {
+    .border-primary {
+        border: none;
+        border-color: none;
+    }
+}
+
+@media only screen and (min-width: 680px) {
+    .container {
+        &:after {
+            content: '';
+            width: 40px;
+            height: 40px;
+            background-color: #f0f3f5;
+            position: absolute;
+            top: 52%;
+            left: 43%;
+        }
+    }
 }

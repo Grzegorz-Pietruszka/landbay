@@ -1,83 +1,100 @@
 .top-buttons {
-  border-radius: 0;
+    border-radius: 0;
+    padding: 10px;
 }
 
 .active-button {
-  border-bottom: 2px solid #000;
+    border-bottom: 2px solid #000;
 }
 
 .register-area {
-  height: 100%;
-  background-color: #fff;
-  border-style: solid;
-  border-color: #d9e2e8;
-  border-width: 0 1px 4px 1px;
-  border-radius: 10px;
+    height: 100%;
+    background-color: #fff;
+    border-style: solid;
+    border-color: #d9e2e8;
+    border-width: 0 1px 4px 1px;
+    border-radius: 5px;
 
-  .form-wrapper {
+    .form-wrapper {
+        img {
+            width: 31px;
+            height: 45px;
+            margin-right: 10px;
+        }
 
-    img {
-      width: 35px;
-      height: 35px;
-      margin-right: 10px;
+        label {
+            width: 100%;
+
+            input {
+                border: none;
+                margin-left: 10px;
+                width: 65%;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &.pin {
+                    width: 10%;
+                }
+
+                &::placeholder {
+                    color: #dae0e4;
+                }
+            }
+        }
+
+        #pin-label {
+            &:after {
+                display: none;
+            }
+
+            .inputpin-wrapper {
+                margin-left: 10px;
+                margin-top: 5px;
+
+                input {
+                    width: 15%;
+                    height: 60%;
+                    padding: 0 3px;
+                    margin-left: 10px;
+                    border-bottom: 2px solid #dae0e4;
+                    text-align: center;
+                    font-size: 1.5rem;
+                }
+            }
+        }
     }
 
+    .checkbox {
+        width: 100%;
+        span {
+            font-size: 0.8rem;
+        }
+        label {
+            &:after {
+                display: none;
+            }
+        }
+    }
+
+    .submit-btn {
+        button {
+            width: 100%;
+            padding: 5px 75px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) {
     label {
-      width: 100%;
-
-      &:after {
-        content: "……………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………";
-        letter-spacing: 2px;
-        font-size: 3px;
-        color: #000;
-      }
-
-      input {
-        border: none;
-        margin-left: 10px;
-        width: 65%;
-
-        &:focus {
-          outline: none;
+        &:after {
+            content: '……………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………………';
+            letter-spacing: 2px;
+            font-size: 3px;
+            color: #000;
         }
-
-        &.pin {
-          width: 10%;
-        }
-
-        &::placeholder {
-          color: gray;
-        }
-      }
     }
-
-    #pin-label {
-      &:after {
-        display: none;
-      }
-
-      .inputpin-wrapper {
-        margin-left: 10px;
-        margin-top: 5px;
-
-        input {
-          width: 5%;
-          height: 60%;
-          padding: 0 3px;
-          margin-left: 10px;
-          border-bottom: 2px solid gray;
-          text-align: center;
-          font-size: 1.5rem;
-        }
-      }
-    }
-  }
-
-  .checkbox {
-    label {
-      &:after {
-        display: none;
-      }
-    }
-  }
 }

@@ -1,54 +1,43 @@
-import { EmailValidator } from './../common/validators/email.validator';
+import { ValidationService } from './../common/validators/validation.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
-  selector: 'register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+    selector: 'register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
-  submitted = false;
+    registerForm: FormGroup;
+    submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+    constructor(private formBuilder: FormBuilder, private ValidationService: ValidationService) {}
 
-  ngOnInit() {
-    this.registerForm = this.formBuilder.group(
-      {
-        email: [
-          '',
-          [Validators.required, Validators.email, EmailValidator.correctEmail]
-        ],
-        confirmEmail: [
-          '',
-          [Validators.required, Validators.email, EmailValidator.correctEmail]
-        ],
-        password: [
-          '',
-          [
-            Validators.required,
-            Validators.pattern(
-              '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{10,}$'
-            )
-          ]
-        ],
-        checkbox: ['', Validators.required]
-      },
-      {
-        validator: EmailValidator.MatchValues('email', 'confirmEmail')
-      }
-    );
-  }
-
-  get f() {
-    return this.registerForm.controls;
-  }
-
-  onSubmit() {
-    this.submitted = true;
-    if (this.registerForm.invalid) {
-      return;
+    ngOnInit() {
+        this.registerForm = this.formBuilder.group(
+            {
+                email: ['', [ValidationService.emailValidator, ValidationService.correctEmail]],
+                confirmEmail: [''],
+                password: ['', ValidationService.passwordValidator],
+                pin1: ['', ValidationService.pinValidator],
+                pin2: ['', ValidationService.pinValidator],
+                pin3: ['', ValidationService.pinValidator],
+                pin4: ['', ValidationService.pinValidator],
+                pin5: ['', ValidationService.pinValidator],
+                checkbox: ['', Validators.requiredTrue],
+            },
+            {
+                validator: ValidationService.matchValues('email', 'confirmEmail'),
+            },
+        );
     }
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value));
-  }
+    get f() {
+        return this.registerForm.controls;
+    }
+
+    onSubmit() {
+        this.submitted = true;
+        if (this.registerForm.invalid) {
+            return;
+        }
+    }
 }

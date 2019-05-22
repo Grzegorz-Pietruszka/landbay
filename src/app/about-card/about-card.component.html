@@ -1,13 +1,9 @@
 <div class="about-card container d-flex flex-column">
-  <div class="title d-flex flex-row">
-    <span class="checkmark">
-      &#10004;
-    </span>
-    <h5 class="tile">{{title}}</h5>
-  </div>
-  <div class="img-wrapper">
-    <img src="assets/images/{{imgIcon}}"
-         alt=""
-         class="img-fluid">
-  </div>
+    <div class="title row">
+        <img src="assets/images/tick_icon.svg" alt="tick_icon" class="col-3" />
+        <h5 class="title" class="col-9 px-0 mb-0 mt-1">{{ title }}</h5>
+    </div>
+    <div class="img-wrapper mt-4">
+        <img src="assets/images/{{ imgIcon }}" class="img-fluid" />
+    </div>
 </div>
