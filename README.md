@@ -4,7 +4,7 @@ In this project I have created an example of static website with registration va
 
 ## Get Started
 
-Download the project or clone the repository
+Download the project or clone the repository.
 
 ```bash
 git clone https://github.com/Grzegorz-Pietruszka/landbay
@@ -20,7 +20,7 @@ npm install -g @angular/cli
 ```bash
 @ng serve -o
 ```
-It will open the website in your default browser on the localhost
+It will open the website in your default browser on the localhost.
 
 
 ## Contributing
