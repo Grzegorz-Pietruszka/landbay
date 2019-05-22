@@ -18,9 +18,14 @@ npm install -g @angular/cli
 ```
 3. Cd in your terminal to website directory and type:
 ```bash
-@ng serve -o
+npm install
 ```
-It will open the website in your default browser on the localhost.
+It will install all the dependencies to run the project.
+4.  
+```bash
+ng serve -o
+```
+It will open the project on your default browser.
 
 
 ## Contributing
