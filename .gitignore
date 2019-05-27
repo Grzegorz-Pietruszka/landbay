@@ -45,3 +45,14 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# other
+prettierrc.js
+tslint.json
+yarn.lock
+/e2e
+**/src/environments/environment.prod.ts
+**/src/environments/environment.ts
+**/*.spec.ts
+
+
