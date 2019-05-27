@@ -51,4 +51,3 @@ prettierrc.js
 tslint.json
 **/*.spec.ts
 /e2e
-/.vscode
