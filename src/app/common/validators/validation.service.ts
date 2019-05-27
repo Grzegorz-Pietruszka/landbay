@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { AbstractControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormGroup, ValidationErrors } from '@angular/forms';
 
 @Injectable({
     providedIn: 'root',
 })
 export class ValidationService {
-    static emailValidator(control: AbstractControl) {
+    static emailValidator(control: AbstractControl): ValidationErrors | null {
         const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!regex.test(control.value)) {
             return { emailIsInvalid: true };
@@ -14,7 +14,7 @@ export class ValidationService {
         }
     }
 
-    static correctEmail(control: AbstractControl) {
+    static correctEmail(control: AbstractControl): ValidationErrors | null {
         let allowedEmails = ['john@investor.com'];
         if (!allowedEmails.includes(control.value as string) && (control.value as string) !== '') {
             return { notAllowedEmail: true };
@@ -23,7 +23,7 @@ export class ValidationService {
         }
     }
 
-    static matchValues(controlName: string, matchingControlName: string) {
+    static matchValues(controlName: string, matchingControlName: string): ValidationErrors | null {
         return (formGroup: FormGroup) => {
             const control = formGroup.controls[controlName];
             const matchingControl = formGroup.controls[matchingControlName];
