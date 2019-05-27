@@ -49,5 +49,8 @@ Thumbs.db
 # other
 prettierrc.js
 tslint.json
-
-
+**/*.spec.ts
+/e2e
+/.vscode
+yarn.lock
+.prettierrc.js
