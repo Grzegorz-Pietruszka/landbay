@@ -23,22 +23,19 @@ npm install -g @angular/cli
 
 ```bash
 @ng serve -o
+npm install
 ```
 
-# It will open the website in your default browser on the localhost.
-
-npm install
-
-````
+It will open the website in your default browser on the localhost.
 It will install all the dependencies to run the project.
+
 4.
+
 ```bash
 ng serve -o
-````
+```
 
 It will open the project on your default browser.
-
-> > > > > > > 7426142e1dfea556bc0d972222a465ac0cabb052
 
 ## Contributing
 
